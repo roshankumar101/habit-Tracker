@@ -21,7 +21,7 @@ const AddHabit = ({ onAdd, onCancel }: AddHabitProps) => {
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <input
                     type="text"
-                    placeholder="e.g. Drink 8 glasses of water"
+                    placeholder="e.g. Read 20min about published Research Paper"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     className="w-full bg-gray-800 border border-white/10 rounded-xl px-4 py-2 text-white placeholder-gray-500 outline-none focus:border-purple-500 transition"
@@ -31,15 +31,15 @@ const AddHabit = ({ onAdd, onCancel }: AddHabitProps) => {
                     <button
                         type="button"
                         onClick={onCancel}
-                        className="px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/10 transition"
+                        className="px-4 py-1 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/10 transition"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
-                        className="px-5 py-2 rounded-xl text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700 transition shadow-md"
+                        className="px-4 py-1 rounded-xl text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700 transition shadow-md"
                     >
-                        Add Habit
+                        Add
                     </button>
                 </div>
             </form>
@@ -47,4 +47,4 @@ const AddHabit = ({ onAdd, onCancel }: AddHabitProps) => {
     )
 }
 
-export default AddHabit
+export default AddHabit

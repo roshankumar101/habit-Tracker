@@ -1,4 +1,5 @@
 import type { Habit } from "../types/habit"
+import { Trash,  CheckCheck } from 'lucide-react';
 
 interface HabitListProps {
   habit: Habit
@@ -24,7 +25,7 @@ const HabitList = ({ habit, onToggle, onDelete }: HabitListProps) => {
             }`}
           aria-label="Toggle habit"
         >
-          ✓
+          <CheckCheck />
         </button>
         <span className={`text-sm font-medium truncate transition-colors ${habit.completed ? 'line-through text-gray-500' : 'text-gray-100'}`}>
           {habit.title}
@@ -37,11 +38,11 @@ const HabitList = ({ habit, onToggle, onDelete }: HabitListProps) => {
         aria-label="Delete habit"
         title="Remove"
       >
-        🗑️
+        <Trash />
       </button>
     </div>
   )
 }
 
 export default HabitList
-
+

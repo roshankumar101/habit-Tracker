@@ -58,7 +58,7 @@ const Tracker = () => {
                         onClick={() => setShowAdd(!showAdd)}
                         className="px-5 py-2 rounded-xl font-semibold text-sm bg-violet-600 text-white hover:bg-violet-700 transition shadow-lg shadow-purple-900/30"
                     >
-                        {showAdd ? '× Close' : '+ Add Habit'}
+                        {showAdd ? 'Close' : '+ New Habit'}
                     </button>
                 </div>
             </div>
@@ -85,12 +85,11 @@ const Tracker = () => {
             )}
 
             {/* Habit List */}
-            <div className="mt-4 flex flex-col gap-2">
+            <div className="mt-10 flex flex-col gap-2">
                 {habits.length === 0 && !showAdd ? (
                     <div className="text-center py-16">
-                        <div className="text-5xl mb-4">🌱</div>
-                        <p className="text-gray-400 font-medium">Start your journey</p>
-                        <p className="text-gray-600 text-sm mt-1">Add your first habit above</p>
+                        <p className="text-gray-400 font-medium">Start your Day</p>
+                        <p className="text-gray-600 text-sm mt-1">Add your Habits to chase !!</p>
                     </div>
                 ) : (
                     habits.map((habit) => (
@@ -107,7 +106,7 @@ const Tracker = () => {
             {/* Completion Banner */}
             {total > 0 && completed === total && (
                 <div className="mt-6 text-center p-4 bg-green-900/30 border border-green-500/20 rounded-2xl">
-                    <p className="text-green-400 font-semibold">All done for today! Great job 🎉</p>
+                    <p className="text-green-400 font-semibold">All done for today!</p>
                 </div>
             )}
         </main>
@@ -115,4 +114,4 @@ const Tracker = () => {
 }
 
 export default Tracker
-
+
