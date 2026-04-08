@@ -1,12 +1,21 @@
 
 const Navbar = () => {
   return (
-    <div className="w-full">
-        <div className="flex justify-start items-center px-10 py-3 bg-gray-800">
-            <h2 className="font-bold text-3xl">Habit Tracker</h2>
+    <nav className="w-full bg-linear-to-r from-violet-700 via-purple-700 to-indigo-700 shadow-lg shadow-purple-900/40">
+      <div className="max-w-3xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">✅</span>
+          <div>
+            <h1 className="font-extrabold text-2xl tracking-tight text-white">Habit Tracker</h1>
+            <p className="text-purple-200 text-xs font-medium">Build better habits, one day at a time</p>
+          </div>
         </div>
-    </div>
+        <div className="bg-white/10 rounded-full px-4 py-1 text-sm font-semibold text-white border border-white/20">
+          {new Date().toLocaleDateString('en-IN', { weekday: 'short', month: 'short', day: 'numeric' })}
+        </div>
+      </div>
+    </nav>
   )
 }
 
-export default Navbar
+export default Navbar
