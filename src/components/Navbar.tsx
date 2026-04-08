@@ -1,7 +1,7 @@
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-linear-to-r from-violet-700 via-purple-700 to-indigo-700 shadow-lg shadow-purple-900/40">
+    <nav className="w-full bg-violet-700 shadow-lg shadow-purple-900/40">
       <div className="max-w-3xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
           <span className="text-3xl">✅</span>

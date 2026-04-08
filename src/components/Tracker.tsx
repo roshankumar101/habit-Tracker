@@ -56,7 +56,7 @@ const Tracker = () => {
                     )}
                     <button
                         onClick={() => setShowAdd(!showAdd)}
-                        className="px-5 py-2 rounded-xl font-semibold text-sm bg-linear-to-r from-violet-600 to-purple-500 text-white hover:opacity-90 transition shadow-lg shadow-purple-900/30"
+                        className="px-5 py-2 rounded-xl font-semibold text-sm bg-violet-600 text-white hover:bg-violet-700 transition shadow-lg shadow-purple-900/30"
                     >
                         {showAdd ? '× Close' : '+ Add Habit'}
                     </button>
@@ -72,7 +72,7 @@ const Tracker = () => {
                     </div>
                     <div className="w-full bg-white/10 rounded-full h-2">
                         <div
-                            className="bg-linear-to-r from-violet-500 to-green-400 h-2 rounded-full transition-all duration-500"
+                            className="bg-violet-500 h-2 rounded-full transition-all duration-500"
                             style={{ width: `${progress}%` }}
                         />
                     </div>

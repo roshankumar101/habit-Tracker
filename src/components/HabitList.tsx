@@ -33,11 +33,11 @@ const HabitList = ({ habit, onToggle, onDelete }: HabitListProps) => {
 
       <button
         onClick={() => onDelete(habit.id)}
-        className="shrink-0 opacity-0 group-hover:opacity-100 text-gray-500 hover:text-red-400 transition-all px-2 py-0.5 rounded text-lg leading-none"
+        className="shrink-0 opacity-0 group-hover:opacity-100 text-gray-500 hover:text-red-400 transition-all px-2 py-0.5 rounded text-sm"
         aria-label="Delete habit"
         title="Remove"
       >
-        ×
+        🗑️
       </button>
     </div>
   )

@@ -37,7 +37,7 @@ const AddHabit = ({ onAdd, onCancel }: AddHabitProps) => {
                     </button>
                     <button
                         type="submit"
-                        className="px-5 py-2 rounded-xl text-sm font-semibold bg-linear-to-r from-violet-600 to-purple-500 text-white hover:opacity-90 transition shadow-md"
+                        className="px-5 py-2 rounded-xl text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700 transition shadow-md"
                     >
                         Add Habit
                     </button>
