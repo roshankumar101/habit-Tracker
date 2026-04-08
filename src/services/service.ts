@@ -32,4 +32,11 @@ export const toggleHabit = (id: number, habits: Habit[]): Habit[] => {
     )
     saveHabits(updated)
     return updated
-}
+}
+
+export const restartDay = (habits: Habit[]): Habit[] => {
+    const updated = habits.map((h) => ({ ...h, completed: false }))
+    saveHabits(updated)
+    return updated
+}
+
