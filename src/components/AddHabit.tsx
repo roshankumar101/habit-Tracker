@@ -16,7 +16,7 @@ const AddHabit = ({ onAdd, onCancel }: AddHabitProps) => {
     }
 
     return (
-        <div className="mt-4 bg-white/5 border border-white/10 rounded-2xl p-4">
+        <div className="mt-4 bg-white/5 border border-white/10 rounded-2xl p-3 sm:p-4">
             <p className="text-sm font-semibold text-purple-300 mb-3">New Habit</p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <input

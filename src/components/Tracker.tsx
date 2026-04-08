@@ -34,21 +34,21 @@ const Tracker = () => {
     const progress = total > 0 ? Math.round((completed / total) * 100) : 0
 
     return (
-        <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
+        <main className="flex-1 max-w-3xl mx-auto w-full px-3 sm:px-4 py-6 sm:py-8">
 
             {/* Stats Row */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                 <div>
                     <h2 className="text-xl font-bold text-white">My Habits</h2>
                     <p className="text-gray-400 text-sm mt-0.5">
                         {total === 0 ? 'No habits yet — add one below!' : `${completed} of ${total} done today`}
                     </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                     {total > 0 && completed > 0 && (
                         <button
                             onClick={handleRestart}
-                            className="px-4 py-2 rounded-xl text-sm font-medium text-gray-400 border border-white/10 hover:text-white hover:border-white/20 transition"
+                            className="px-3 sm:px-4 py-2 rounded-xl text-sm font-medium text-gray-400 border border-white/10 hover:text-white hover:border-white/20 transition"
                             title="Untick all and start fresh"
                         >
                             ↺ Restart Day
@@ -56,7 +56,7 @@ const Tracker = () => {
                     )}
                     <button
                         onClick={() => setShowAdd(!showAdd)}
-                        className="px-5 py-2 rounded-xl font-semibold text-sm bg-violet-600 text-white hover:bg-violet-700 transition shadow-lg shadow-purple-900/30"
+                        className="px-4 sm:px-5 py-2 rounded-xl font-semibold text-sm bg-violet-600 text-white hover:bg-violet-700 transition shadow-lg shadow-purple-900/30"
                     >
                         {showAdd ? 'Close' : '+ New Habit'}
                     </button>

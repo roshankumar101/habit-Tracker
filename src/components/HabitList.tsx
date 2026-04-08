@@ -25,7 +25,7 @@ const HabitList = ({ habit, onToggle, onDelete }: HabitListProps) => {
             }`}
           aria-label="Toggle habit"
         >
-          <CheckCheck />
+          <CheckCheck size={14} />
         </button>
         <span className={`text-sm font-medium truncate transition-colors ${habit.completed ? 'line-through text-gray-500' : 'text-gray-100'}`}>
           {habit.title}
@@ -38,7 +38,7 @@ const HabitList = ({ habit, onToggle, onDelete }: HabitListProps) => {
         aria-label="Delete habit"
         title="Remove"
       >
-        <Trash />
+        <Trash size={15} />
       </button>
     </div>
   )
