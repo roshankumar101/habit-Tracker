@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import AddHabit from "./AddHabit"
 import HabitList from "./HabitList"
 import type { Habit } from "../types/habit"
-import { getHabits, addHabit, deleteHabit, toggleHabit } from "../services/service"
+import { getHabits, addHabit, deleteHabit, toggleHabit, restartDay } from "../services/service"
 
 const Tracker = () => {
     const [habits, setHabits] = useState<Habit[]>([])
@@ -25,6 +25,10 @@ const Tracker = () => {
         setHabits(toggleHabit(id, habits))
     }
 
+    const handleRestart = () => {
+        setHabits(restartDay(habits))
+    }
+
     const completed = habits.filter(h => h.completed).length
     const total = habits.length
     const progress = total > 0 ? Math.round((completed / total) * 100) : 0
@@ -40,22 +44,30 @@ const Tracker = () => {
                         {total === 0 ? 'No habits yet — add one below!' : `${completed} of ${total} done today`}
                     </p>
                 </div>
-                <button
-                    onClick={() => setShowAdd(!showAdd)}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-linear-to-r from-violet-600 to-purple-500 text-white hover:opacity-90 transition shadow-lg shadow-purple-900/30"
-                >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d={showAdd ? "M6 18L18 6M6 6l12 12" : "M12 4v16m8-8H4"} />
-                    </svg>
-                    {showAdd ? 'Close' : 'Add Habit'}
-                </button>
+                <div className="flex items-center gap-2">
+                    {total > 0 && completed > 0 && (
+                        <button
+                            onClick={handleRestart}
+                            className="px-4 py-2 rounded-xl text-sm font-medium text-gray-400 border border-white/10 hover:text-white hover:border-white/20 transition"
+                            title="Untick all and start fresh"
+                        >
+                            ↺ Restart Day
+                        </button>
+                    )}
+                    <button
+                        onClick={() => setShowAdd(!showAdd)}
+                        className="px-5 py-2 rounded-xl font-semibold text-sm bg-linear-to-r from-violet-600 to-purple-500 text-white hover:opacity-90 transition shadow-lg shadow-purple-900/30"
+                    >
+                        {showAdd ? '× Close' : '+ Add Habit'}
+                    </button>
+                </div>
             </div>
 
             {/* Progress Bar */}
             {total > 0 && (
                 <div className="mb-6">
                     <div className="flex justify-between text-xs text-gray-400 mb-1.5">
-                        <span>Progress</span>
+                        <span>Today's progress</span>
                         <span>{progress}%</span>
                     </div>
                     <div className="w-full bg-white/10 rounded-full h-2">
@@ -95,11 +107,12 @@ const Tracker = () => {
             {/* Completion Banner */}
             {total > 0 && completed === total && (
                 <div className="mt-6 text-center p-4 bg-green-900/30 border border-green-500/20 rounded-2xl">
-                    <p className="text-green-400 font-semibold">🎉 All habits completed! Amazing work!</p>
+                    <p className="text-green-400 font-semibold">All done for today! Great job 🎉</p>
                 </div>
             )}
         </main>
     )
 }
 
-export default Tracker
+export default Tracker
+
